@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tab-item {
+  @apply text-center p-2;
+}
+
+.tab-item-active {
+  @apply border-b-2 border-blue-500;
+}
+
+.post-card {
+  @apply p-4 m-2 bg-white rounded-lg shadow;
+}
+
+.input-field {
+  @apply p-2 border rounded-lg w-full mb-2;
+}
+
+.btn-primary {
+  @apply bg-blue-500 text-white p-3 rounded-lg;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 p-3 rounded-lg;
+}

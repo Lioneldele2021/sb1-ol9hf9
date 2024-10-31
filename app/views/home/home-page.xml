@@ -1,0 +1,49 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="StudyBuddy" />
+    
+    <TabView selectedIndex="{{ selectedTab }}" androidTabsPosition="bottom">
+        <TabViewItem title="Feed">
+            <StackLayout>
+                <Button text="New Post" tap="{{ onNewPost }}" class="btn-primary m-2" />
+                <ListView items="{{ posts }}" class="list-group">
+                    <ListView.itemTemplate>
+                        <StackLayout class="post-card">
+                            <Label text="{{ title }}" class="font-bold text-lg" />
+                            <Label text="{{ content }}" textWrap="true" />
+                            <Label text="{{ type }}" class="text-sm text-gray-500" />
+                        </StackLayout>
+                    </ListView.itemTemplate>
+                </ListView>
+            </StackLayout>
+        </TabViewItem>
+
+        <TabViewItem title="Past Exams">
+            <StackLayout>
+                <SearchBar hint="Search exams..." text="{{ searchQuery }}" />
+                <ListView items="{{ exams }}" class="list-group">
+                    <ListView.itemTemplate>
+                        <StackLayout class="post-card">
+                            <Label text="{{ course }}" class="font-bold" />
+                            <Label text="{{ year }}" />
+                            <Button text="Download" tap="{{ onDownload }}" class="btn-secondary" />
+                        </StackLayout>
+                    </ListView.itemTemplate>
+                </ListView>
+            </StackLayout>
+        </TabViewItem>
+
+        <TabViewItem title="Forum">
+            <StackLayout>
+                <ListView items="{{ discussions }}" class="list-group">
+                    <ListView.itemTemplate>
+                        <StackLayout class="post-card">
+                            <Label text="{{ title }}" class="font-bold" />
+                            <Label text="{{ lastActivity }}" class="text-sm text-gray-500" />
+                            <Label text="{{ repliesCount }} replies" class="text-sm" />
+                        </StackLayout>
+                    </ListView.itemTemplate>
+                </ListView>
+            </StackLayout>
+        </TabViewItem>
+    </TabView>
+</Page>
